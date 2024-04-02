@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pr2.Controllers.RegisterController">
+   <top>
+      <VBox prefHeight="89.0" prefWidth="695.0" style="-fx-background-color: #00d7ff;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="93.0" prefWidth="258.0" text="LifeCare Clinic" textFill="#ec8b5e">
+               <font>
+                  <Font name="Monotype Corsiva" size="40.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <VBox.margin>
+                  <Insets left="210.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="382.0" prefWidth="57.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="171.0" layoutY="50.0" prefHeight="18.0" prefWidth="62.0" text="First Name" />
+            <Label layoutX="172.0" layoutY="88.0" text="Last Name" />
+            <Label layoutX="172.0" layoutY="126.0" text="Username" />
+            <Label layoutX="172.0" layoutY="165.0" text="Password" />
+            <Label layoutX="172.0" layoutY="207.0" text="Confirm Password" />
+            <Label layoutX="173.0" layoutY="242.0" text="Type" />
+            <TextField fx:id="last_nametf" layoutX="306.0" layoutY="83.0" prefHeight="26.0" prefWidth="152.0" />
+            <TextField fx:id="first_nametf" layoutX="306.0" layoutY="46.0" prefHeight="26.0" prefWidth="152.0" />
+            <TextField fx:id="usernametf" layoutX="307.0" layoutY="120.0" prefHeight="26.0" />
+            <TextField fx:id="passtf" layoutX="307.0" layoutY="159.0" prefHeight="26.0" />
+            <TextField fx:id="conf_passtf" layoutX="307.0" layoutY="201.0" prefHeight="26.0" />
+            <Button fx:id="registerBtn" layoutX="348.0" layoutY="314.0" mnemonicParsing="false" prefWidth="90.0" style="-fx-background-color: #12ff7d;" text="Register" textFill="#ff0c45" />
+            <Button fx:id="back_to_login_btn" layoutX="200.0" layoutY="315.0" mnemonicParsing="false" style="-fx-background-color: #12ff7d;" text="Back to login" textFill="#ff0545" />
+            <Label fx:id="specialistLb" layoutX="173.0" layoutY="278.0" prefHeight="18.0" prefWidth="91.0" text="Specialisation" visible="false" />
+            <TextField fx:id="specialisttf" layoutX="307.0" layoutY="273.0" prefHeight="26.0" visible="false" />
+            <ComboBox fx:id="typeCb" layoutX="307.0" layoutY="238.0" prefWidth="150.0" />
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

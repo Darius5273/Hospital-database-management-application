@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="575.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pr2.Controllers.AdmissionServicesviewController">
+   <children>
+      <Button fx:id="addBtn" layoutX="25.0" layoutY="269.0" mnemonicParsing="false" onAction="#handleAddAdmissionClick" style="-fx-background-color: green;" text="Add" />
+      <Button fx:id="updateBtn" layoutX="81.0" layoutY="268.0" mnemonicParsing="false" onAction="#handleUpdateAdmissionClick" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: red;" text="Update" />
+      <Button fx:id="deleteBtn" layoutX="168.0" layoutY="268.0" mnemonicParsing="false" onAction="#handleDeleteAdmissionClick" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: yellow;" text="Delete" />
+      <Label layoutX="21.0" layoutY="51.0" text="Patient" AnchorPane.leftAnchor="21.0" />
+      <TextField fx:id="adIdTf" editable="false" layoutX="442.0" layoutY="269.0" />
+      <Button fx:id="clearBtn" layoutX="252.0" layoutY="269.0" mnemonicParsing="false" onAction="#clearFields" style="-fx-background-color: white;" text="Clear" />
+      <TextField fx:id="search_roomTf" layoutX="24.0" layoutY="348.0" promptText="Search room" />
+      <TableView fx:id="table_services" layoutX="364.0" layoutY="381.0" prefHeight="178.0" prefWidth="231.0">
+         <columns>
+            <TableColumn fx:id="col_ser_name" prefWidth="165.0" text="Service Name" />
+            <TableColumn fx:id="col_ser_charge" prefWidth="60.800048828125" text="Charges" />
+         </columns>
+      </TableView>
+      <TableView fx:id="table_room" layoutX="23.0" layoutY="382.0" prefHeight="178.0" prefWidth="275.0">
+         <columns>
+            <TableColumn fx:id="col_room_id" prefWidth="66.4000244140625" text="Room_id" />
+            <TableColumn fx:id="col_room_type" prefWidth="105.5999755859375" text="Type" />
+            <TableColumn fx:id="col_room_charge" prefWidth="85.59996032714844" text="Charges/day" />
+         </columns>
+      </TableView>
+      <Button fx:id="searchRoomBtn" layoutX="181.0" layoutY="347.0" mnemonicParsing="false" onAction="#search_rooms" style="-fx-background-color: violet;" text="Search" />
+      <TableView fx:id="table_admissions" layoutX="306.0" layoutY="61.0" prefHeight="194.0" prefWidth="470.0">
+         <columns>
+            <TableColumn fx:id="col_ad_id" prefWidth="27.199981689453125" text="Id" />
+            <TableColumn fx:id="col_ad_pat" prefWidth="86.39996337890625" text="Patient" />
+            <TableColumn fx:id="col_ad_doc" prefWidth="86.4000244140625" text="Doctor" />
+            <TableColumn fx:id="col_ad_room" minWidth="0.0" prefWidth="43.20001220703125" text="Room" />
+            <TableColumn fx:id="col_ad_disease" prefWidth="140.0" text="Disease" />
+            <TableColumn fx:id="col_ad_date1" minWidth="0.0" prefWidth="70.0" text="Admission" />
+            <TableColumn fx:id="col_ad_date2" minWidth="0.0" prefWidth="70.0" text="Discharge" />
+         </columns>
+      </TableView>
+      <ComboBox fx:id="doctorComboBox" editable="true" layoutX="124.0" layoutY="80.0" prefWidth="150.0" />
+      <Button fx:id="resetBtn" layoutX="251.0" layoutY="348.0" mnemonicParsing="false" onAction="#reset_rooms" style="-fx-background-color: red;" text="Reset" />
+      <Label layoutX="341.0" layoutY="274.0" prefHeight="18.0" prefWidth="89.0" text="Admission_id" />
+      <ComboBox fx:id="patientComboBox" editable="true" layoutX="124.0" layoutY="45.0" prefWidth="150.0" />
+      <Label layoutX="21.0" layoutY="84.0" text="Doctor" AnchorPane.leftAnchor="21.0" />
+      <Label layoutX="21.0" layoutY="123.0" text="Room" AnchorPane.leftAnchor="21.0" />
+      <TextField fx:id="diseaseTf" layoutX="124.0" layoutY="153.0" prefHeight="26.0" prefWidth="150.0" />
+      <Label layoutX="21.0" layoutY="158.0" text="Hospitalized for" AnchorPane.leftAnchor="21.0" />
+      <ComboBox fx:id="roomCb" layoutX="124.0" layoutY="119.0" prefWidth="150.0" />
+      <DatePicker fx:id="ad_date_picker" editable="false" layoutX="124.0" layoutY="186.0" prefHeight="26.0" prefWidth="150.0" promptText="dd.MM.yyyy" />
+      <Label layoutX="21.0" layoutY="193.0" text="Admission date" AnchorPane.leftAnchor="21.0" />
+      <DatePicker fx:id="dis_date_picker" editable="false" layoutX="124.0" layoutY="224.0" prefHeight="26.0" prefWidth="150.0" promptText="dd.MM.yyyy" />
+      <Label layoutX="21.0" layoutY="228.0" text="Discharge date" AnchorPane.leftAnchor="21.0" />
+      <ComboBox fx:id="serviceCb" editable="true" layoutX="442.0" layoutY="302.0" prefWidth="150.0" />
+      <Label layoutX="341.0" layoutY="306.0" text="Service name" />
+      <Button fx:id="addBtnS" layoutX="642.0" layoutY="268.0" mnemonicParsing="false" onAction="#handleAddServiceClick" style="-fx-background-color: green;" text="Add Service" />
+      <Button fx:id="updateBtnS" layoutX="630.0" layoutY="303.0" mnemonicParsing="false" onAction="#handleUpdateServiceClick" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: red;" text="Update Service" />
+      <Button fx:id="deleteBtnS" layoutX="630.0" layoutY="345.0" mnemonicParsing="false" onAction="#handleDeleteServiceClick" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: yellow;" text="Delete Service" />
+      <TextField fx:id="priceTf" editable="false" layoutX="691.0" layoutY="468.0" prefHeight="26.0" prefWidth="79.0" />
+      <Label layoutX="605.0" layoutY="466.0" text="Medical bill" AnchorPane.leftAnchor="605.0" />
+      <Label layoutX="605.0" layoutY="479.0" text="per admission" AnchorPane.leftAnchor="605.0" />
+      <Label layoutX="371.0" layoutY="352.0" text="List of services for selected admission" />
+      <Label layoutX="23.0" layoutY="325.0" text="Rooms information" />
+      <Label layoutX="312.0" layoutY="37.0" text="Admissions table" />
+      <Label layoutX="21.0" layoutY="22.0" text="Fill in data for admissions" AnchorPane.leftAnchor="21.0" />
+   </children>
+</AnchorPane>

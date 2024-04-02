@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="appointments_AP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="546.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pr2.Controllers.AppointmentsviewController">
+   <children>
+      <Button fx:id="addBtn" layoutX="33.0" layoutY="197.0" mnemonicParsing="false" onAction="#handleAddAppointmentClick" style="-fx-background-color: green;" text="Add" />
+      <Button fx:id="updateBtn" layoutX="93.0" layoutY="196.0" mnemonicParsing="false" onAction="#handleUpdateAppointmentClick" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: red;" text="Update" />
+      <Button fx:id="deleteBtn" layoutX="172.0" layoutY="196.0" mnemonicParsing="false" onAction="#handleDeleteAppointmentClick" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: yellow;" text="Delete" />
+      <Label layoutX="21.0" layoutY="36.0" text="Patient_id" />
+      <Label layoutX="21.0" layoutY="72.0" text="Doctor_id" />
+      <Label layoutX="21.0" layoutY="107.0" text="Date" />
+      <Label layoutX="21.0" layoutY="142.0" text="Time" />
+      <DatePicker fx:id="date" editable="false" layoutX="123.0" layoutY="103.0" prefHeight="26.0" prefWidth="149.0" promptText="dd.MM.yyyy" />
+      <Button fx:id="clearBtn" layoutX="250.0" layoutY="197.0" mnemonicParsing="false" onAction="#clearFields" style="-fx-background-color: white;" text="Clear Fields" />
+      <TextField fx:id="search_patientTf" layoutX="484.0" layoutY="28.0" promptText="Search by patient's name" />
+      <TextField fx:id="search_doctorTf" layoutX="405.0" layoutY="256.0" prefHeight="26.0" prefWidth="150.0" promptText="Search by doctor's name" />
+      <TableView fx:id="table_patients" layoutX="396.0" layoutY="62.0" prefHeight="178.0" prefWidth="340.0">
+        <columns>
+          <TableColumn fx:id="col_Patient_id" prefWidth="81.60003662109375" text="Patient SSN" />
+          <TableColumn fx:id="col_pat_fn" prefWidth="112.79998779296875" text="First Name" />
+            <TableColumn fx:id="col_pat_ln" prefWidth="139.199951171875" text="Last Name" />
+        </columns>
+      </TableView>
+      <TableView fx:id="table_doctors" layoutX="396.0" layoutY="328.0" prefHeight="178.0" prefWidth="346.0">
+         <columns>
+            <TableColumn fx:id="col_doc_id" prefWidth="66.4000244140625" text="Doctor_id" />
+            <TableColumn fx:id="col_doc_fn" prefWidth="80.79998779296875" text="First Name" />
+            <TableColumn fx:id="col_doc_ln" prefWidth="78.4000244140625" text="Last Name" />
+            <TableColumn fx:id="col_doc_spec" prefWidth="107.19997558593752" text="Specialisation" />
+         </columns>
+      </TableView>
+      <TextField fx:id="search_specialisationTf1" layoutX="566.0" layoutY="256.0" prefHeight="26.0" prefWidth="185.0" promptText="Search by doctor's specialisation" />
+      <Button fx:id="searchPatBtn" layoutX="645.0" layoutY="28.0" mnemonicParsing="false" onAction="#search_patients" style="-fx-background-color: violet;" text="Search" />
+      <Button fx:id="searchDocBtn" layoutX="646.0" layoutY="292.0" mnemonicParsing="false" onAction="#search_doctors" style="-fx-background-color: violet;" text="Search" />
+      <TableView fx:id="table_appointments" layoutX="16.0" layoutY="296.0" prefHeight="210.0" prefWidth="331.0">
+        <columns>
+          <TableColumn fx:id="col_app_id" prefWidth="36.0" text="Id" />
+          <TableColumn fx:id="col_app_patid" prefWidth="81.5999755859375" text="Patient_id" />
+            <TableColumn fx:id="col_app_docid" prefWidth="60.79998779296875" text="Doctor_id" />
+            <TableColumn fx:id="col_app_date" prefWidth="84.79998779296875" text="Date" />
+            <TableColumn fx:id="col_app_time" prefWidth="52.00006103515625" text="Time" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="patientIdCb" layoutX="123.0" layoutY="32.0" prefWidth="150.0" />
+      <ComboBox fx:id="docotrIdCb" layoutX="123.0" layoutY="66.0" prefWidth="150.0" />
+      <Button fx:id="reset_pBtn" layoutX="709.0" layoutY="28.0" mnemonicParsing="false" onAction="#reset_patients" style="-fx-background-color: red;" text="Reset" />
+      <Button fx:id="reset_dBtn" layoutX="713.0" layoutY="292.0" mnemonicParsing="false" onAction="#reset_doctors" style="-fx-background-color: red;" text="Reset" />
+      <Label layoutX="20.0" layoutY="264.0" text="Appointments table" />
+      <Label layoutX="398.0" layoutY="41.0" text="Patients data" />
+      <Label layoutX="396.0" layoutY="304.0" text="Doctors data" />
+      <ComboBox fx:id="timeCb" layoutX="123.0" layoutY="140.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>

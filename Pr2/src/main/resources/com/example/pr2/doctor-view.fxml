@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="717.0" prefWidth="968.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pr2.Controllers.DoctorviewController">
+   <top>
+      <VBox prefHeight="95.0" prefWidth="695.0" style="-fx-background-color: #00d7ff;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="93.0" prefWidth="258.0" text="LifeCare Clinic" textFill="#ec8b5e">
+               <font>
+                  <Font name="Monotype Corsiva" size="40.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <VBox prefHeight="377.0" prefWidth="138.0" style="-fx-background-color: #5800ff;" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="590.0" prefWidth="138.0">
+               <children>
+                  <Button fx:id="logoutBtn" layoutY="482.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="139.0" style="-fx-background-color: #5800ff;" text="Log out" textFill="#fcfcfc" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="482.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="createResBtn" layoutX="14.0" layoutY="218.0" mnemonicParsing="false" onAction="#addResult" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: red;" text="Create Medical Record" />
+            <Button fx:id="addMedBtn" layoutX="183.0" layoutY="218.0" mnemonicParsing="false" onAction="#addMed" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: yellow;" text="Prescribe medicine" />
+            <Label layoutX="20.799999237060547" layoutY="32.0" text="Appointment ID" AnchorPane.leftAnchor="21.0" />
+            <TextField fx:id="medicineTf" layoutX="124.0" layoutY="96.0" prefHeight="26.0" prefWidth="150.0" />
+            <Button fx:id="clearBtn" layoutX="17.0" layoutY="253.0" mnemonicParsing="false" onAction="#clearFields" style="-fx-background-color: white;" text="Clear Fields" />
+            <TableView fx:id="table_medicine" layoutX="376.0" layoutY="388.0" prefHeight="178.0" prefWidth="425.0">
+               <columns>
+                  <TableColumn fx:id="col_p_med" prefWidth="104.79998779296875" text="Medicine" />
+                  <TableColumn fx:id="col_p_dos" prefWidth="117.60000610351562" text="Dosage" />
+                  <TableColumn fx:id="col_p_freq" prefWidth="195.99993896484375" text="Frequency" />
+               </columns>
+            </TableView>
+            <TableView fx:id="table_results" layoutX="359.0" layoutY="45.0" prefHeight="194.0" prefWidth="458.0">
+               <columns>
+                  <TableColumn fx:id="col_m_rec" prefWidth="144.79998779296875" text="Record_ID" />
+                  <TableColumn fx:id="col_m_app" prefWidth="127.20001220703125" text="Appointment_ID" />
+                  <TableColumn fx:id="col_m_disease" prefWidth="180.0" text="Disease" />
+               </columns>
+            </TableView>
+            <Label layoutX="20.799999237060547" layoutY="103.0" prefHeight="18.0" prefWidth="89.0" text="Medicine" AnchorPane.leftAnchor="21.0" />
+            <TextField fx:id="diseaseTf" layoutX="123.0" layoutY="62.0" prefHeight="26.0" prefWidth="150.0" />
+            <Label layoutX="20.799999237060547" layoutY="68.0" text="Diagnosis" AnchorPane.leftAnchor="20.8" />
+            <Label layoutX="20.799999237060547" layoutY="135.0" text="Dosage" AnchorPane.leftAnchor="21.0" />
+            <Label layoutX="20.799999237060547" layoutY="165.0" text="Frequency" AnchorPane.leftAnchor="21.0" />
+            <TextField fx:id="dosageTf" layoutX="124.0" layoutY="129.0" prefHeight="26.0" prefWidth="150.0" />
+            <TextField fx:id="freqTf" layoutX="124.0" layoutY="161.0" prefHeight="26.0" prefWidth="150.0" />
+            <TableView fx:id="table_appointments" layoutX="17.0" layoutY="385.0" prefHeight="210.0" prefWidth="331.0">
+               <columns>
+                  <TableColumn fx:id="col_app_id" prefWidth="48.79998779296875" text="Id" />
+                  <TableColumn fx:id="col_app_patid" prefWidth="115.20001220703125" text="Patient_id" />
+                  <TableColumn fx:id="col_app_date" prefWidth="87.20001220703125" text="Date" />
+                  <TableColumn fx:id="col_app_time" prefWidth="72.79998779296875" text="Time" />
+               </columns>
+            </TableView>
+            <TextField fx:id="appIdTf" editable="false" layoutX="123.0" layoutY="28.0" prefWidth="150.0" />
+            <DatePicker fx:id="date" layoutX="141.0" layoutY="346.0" promptText="dd.MM.yyyy" />
+            <TextField fx:id="searchPrescTf" layoutX="640.0" layoutY="356.0" promptText="Search record ID" />
+            <Button fx:id="searchPrescBtn" layoutX="648.0" layoutY="321.0" mnemonicParsing="false" onAction="#search_record_med" style="-fx-background-color: pink;" text="Search" />
+            <Button fx:id="searchDateBtn" layoutX="140.0" layoutY="310.0" mnemonicParsing="false" onAction="#search_app_date" style="-fx-background-color: pink;" text="Search appointment" />
+            <Button fx:id="resetPrescBtn" layoutX="720.0" layoutY="320.0" mnemonicParsing="false" onAction="#reset_medicine" style="-fx-background-color: aqua;" text="Reset" />
+            <Button fx:id="resetDateBtn" layoutX="282.0" layoutY="310.0" mnemonicParsing="false" onAction="#reset_app_date" style="-fx-background-color: aqua;" text="Reset" />
+            <Label layoutX="376.0" layoutY="363.0" text="Medications prescribed for a medical condition" />
+            <Label layoutX="21.0" layoutY="350.0" text="Appointments data" />
+            <Label layoutX="362.0" layoutY="19.0" text="Medical records" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
