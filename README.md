@@ -9,9 +9,11 @@ The Hospital Database Management System is a comprehensive software solution des
 - The system begins with a secure login page, ensuring only authorized personnel can access the application.
 
 ![](Images/p1.png)
+
 *Login page*
 
 ![](Images/p5.png)
+
 *Invalid login message on unauthorized access*
 
 - Users can register accounts via a registration pop-up, providing essential information such as name, username, password, and user type (doctor or receptionist).
